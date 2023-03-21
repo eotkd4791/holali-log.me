@@ -8,7 +8,7 @@ import { SITE_URL } from "../../config";
 
 export async function getStaticPaths() {
   const posts = await readAll({
-    directory: "blog",
+    directory: "tech",
     frontmatterSchema: blog,
   });
 

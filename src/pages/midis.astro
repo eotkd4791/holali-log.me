@@ -5,12 +5,12 @@ import PageLayout from "../layouts/PageLayout.astro";
 import PageMeta from "../components/PageMeta.astro";
 import { SITE_TITLE } from "../config";
 
-const projects = await readAll({
-  directory: "projects",
+const midi = await readAll({
+  directory: "midi",
   frontmatterSchema: project,
 });
 
-const sortedProjects = projects
+const sortedMidis = midi
   .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
@@ -24,7 +24,7 @@ const sortedProjects = projects
   <section slot="main">
     <ul>
       {
-        sortedProjects.map((project) => {
+        sortedMidis.map((project) => {
           const formattedDate = new Date(
             project.frontmatter.date
           ).toLocaleDateString("en-us", {
