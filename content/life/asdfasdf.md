@@ -13,6 +13,8 @@ Bold: **This text is bold**.
 
 Italics: _This text is italics_.
 
+한글은 어떻게 보이나 ??
+
 Strikethrough: You can ~~strikethrough~~ text.
 
 Inline code: You can add inline code like this `const hello = "world"`.
