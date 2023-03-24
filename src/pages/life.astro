@@ -1,16 +1,16 @@
 ---
 import { readAll } from "../lib/markdoc/read";
-import { midi } from "../lib/markdoc/frontmatter.schema";
+import { life } from "../lib/markdoc/frontmatter.schema";
 import PageLayout from "../layouts/PageLayout.astro";
 import PageMeta from "../components/PageMeta.astro";
 import { SITE_TITLE } from "../config";
 
-const posts = await readAll({
-  directory: "midi",
-  frontmatterSchema: midi,
+const lives = await readAll({
+  directory: "life",
+  frontmatterSchema: life,
 });
 
-const sortedPosts = posts
+const sortedLives = lives
   .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
@@ -20,13 +20,13 @@ const sortedPosts = posts
 ---
 
 <PageLayout>
-  <PageMeta title={`Midi | ${SITE_TITLE}`} slot="meta" />
+  <PageMeta title={`Life | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
     <ul>
       {
-        sortedPosts.map((post) => {
+        sortedLives.map((life) => {
           const formattedDate = new Date(
-            post.frontmatter.date
+            life.frontmatter.date
           ).toLocaleDateString("en-us", {
             year: "numeric",
             month: "short",
@@ -35,9 +35,9 @@ const sortedPosts = posts
           return (
             <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
               <div class="title">
-                {post.frontmatter.external ? (
+                {life.frontmatter.external ? (
                   <a
-                    href={post.frontmatter.url}
+                    href={life.frontmatter.url}
                     target="_blank"
                     class="unset
                         transition-[background-size] duration-300 
@@ -46,14 +46,14 @@ const sortedPosts = posts
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
                   >
-                    <span>{post.frontmatter.title}</span>
+                    <span>{life.frontmatter.title}</span>
                     <span>
                       <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
                     </span>
                   </a>
                 ) : (
                   <a
-                    href={`/midi/${post.slug}`}
+                    href={`/life/${life.slug}`}
                     class="unset
                         transition-[background-size] duration-300 
                         bg-gradient-to-r bg-left-bottom bg-no-repeat
@@ -61,12 +61,12 @@ const sortedPosts = posts
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
                   >
-                    {post.frontmatter.title}
+                    {life.frontmatter.title}
                   </a>
                 )}
               </div>
               <div class="text-text-muted text-sm italic pt-1">
-                <time datetime={post.frontmatter.date.toISOString()}>
+                <time datetime={life.frontmatter.date.toISOString()}>
                   {formattedDate}
                 </time>
               </div>

@@ -42,7 +42,7 @@ export const tech = z.discriminatedUnion("external", [
   }),
 ]);
 
-export const midi = z.discriminatedUnion("external", [
+export const life = z.discriminatedUnion("external", [
   // markdown
   baseSchema.extend({
     external: z.literal(false),

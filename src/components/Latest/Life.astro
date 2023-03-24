@@ -1,13 +1,13 @@
 ---
 import { readAll } from "../../lib/markdoc/read";
-import { midi } from "../../lib/markdoc/frontmatter.schema";
+import { life } from "../../lib/markdoc/frontmatter.schema";
 
-const midis = await readAll({
-  directory: "midi",
-  frontmatterSchema: midi,
+const lives = await readAll({
+  directory: "life",
+  frontmatterSchema: life,
 });
 
-const sortedMidis = midis
+const sortedLives = lives
   .filter((p) => p.frontmatter.draft !== true)
   .sort(
     (a, b) =>
@@ -17,13 +17,13 @@ const sortedMidis = midis
   .slice(0, 5);
 ---
 
-<div>
-  <p>Latest Midi:</p>
+<div class="mt-5">
+  <p>Latest Life:</p>
   <ul class="mt-5">
     {
-      sortedMidis.map((midi) => {
+      sortedLives.map((life) => {
         const formattedDate = new Date(
-          midi.frontmatter.date
+          life.frontmatter.date
         ).toLocaleDateString("en-us", {
           year: "numeric",
           month: "short",
@@ -32,9 +32,9 @@ const sortedMidis = midis
         return (
           <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
             <div class="title">
-              {midi.frontmatter.external ? (
+              {life.frontmatter.external ? (
                 <a
-                  href={midi.frontmatter.url}
+                  href={life.frontmatter.url}
                   target="_blank"
                   class="unset
                         transition-[background-size] duration-300 
@@ -43,14 +43,14 @@ const sortedMidis = midis
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
                 >
-                  <span>{midi.frontmatter.title}</span>
+                  <span>{life.frontmatter.title}</span>
                   <span>
                     <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
                   </span>
                 </a>
               ) : (
                 <a
-                  href={`/midi/${midi.slug}`}
+                  href={`/life/${life.slug}`}
                   class="unset
                         transition-[background-size] duration-300 
                         bg-gradient-to-r bg-left-bottom bg-no-repeat
@@ -58,12 +58,12 @@ const sortedMidis = midis
                         from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
                       "
                 >
-                  {midi.frontmatter.title}
+                  {life.frontmatter.title}
                 </a>
               )}
             </div>
             <div class="text-text-muted text-sm italic pt-1">
-              <time datetime={midi.frontmatter.date.toISOString()}>
+              <time datetime={life.frontmatter.date.toISOString()}>
                 {formattedDate}
               </time>
             </div>
