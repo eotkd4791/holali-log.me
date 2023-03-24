@@ -1,13 +1,13 @@
 ---
 import { readAll } from "../lib/markdoc/read";
-import { tech } from "../lib/markdoc/frontmatter.schema";
+import { midi } from "../lib/markdoc/frontmatter.schema";
 import PageLayout from "../layouts/PageLayout.astro";
 import PageMeta from "../components/PageMeta.astro";
 import { SITE_TITLE } from "../config";
 
 const posts = await readAll({
-  directory: "tech",
-  frontmatterSchema: tech,
+  directory: "midi",
+  frontmatterSchema: midi,
 });
 
 const sortedPosts = posts
@@ -20,7 +20,7 @@ const sortedPosts = posts
 ---
 
 <PageLayout>
-  <PageMeta title={`Tech | ${SITE_TITLE}`} slot="meta" />
+  <PageMeta title={`Midi | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
     <ul>
       {
@@ -53,7 +53,7 @@ const sortedPosts = posts
                   </a>
                 ) : (
                   <a
-                    href={`/tech/${post.slug}`}
+                    href={`/midi/${post.slug}`}
                     class="unset
                         transition-[background-size] duration-300 
                         bg-gradient-to-r bg-left-bottom bg-no-repeat

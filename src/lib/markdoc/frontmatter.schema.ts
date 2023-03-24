@@ -23,7 +23,7 @@ const baseSchema = z.object({
   If you don't want to link posts written in external websites, you could
   simplify this to just use the markdown schema.
 */
-export const blog = z.discriminatedUnion("external", [
+export const tech = z.discriminatedUnion("external", [
   // markdown
   baseSchema.extend({
     external: z.literal(false),
@@ -42,6 +42,21 @@ export const blog = z.discriminatedUnion("external", [
   }),
 ]);
 
-export const project = baseSchema.extend({
-  url: z.string(),
-});
+export const midi = z.discriminatedUnion("external", [
+  // markdown
+  baseSchema.extend({
+    external: z.literal(false),
+    description: z.optional(z.string()),
+    ogImagePath: z.optional(z.string()),
+    canonicalUrl: z.optional(z.string()),
+  }),
+  // external link
+  baseSchema.extend({
+    external: z.literal(true),
+    url: z.string({
+      required_error:
+        "external is true but url is missing. url must be set for posts marked as external.",
+      invalid_type_error: "external should be string.",
+    }),
+  }),
+]);
