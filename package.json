@@ -1,6 +1,6 @@
 {
   "name": "blogster-bubblegum",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -8,8 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "clean": "rm -rf dist",
-    "deploy": "touch "
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@astrojs/prism": "^1.0.2",
