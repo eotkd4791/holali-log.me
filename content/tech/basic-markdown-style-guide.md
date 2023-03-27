@@ -1,8 +1,8 @@
 ---
 external: false
-title: "Basic markdown style guide"
-description: "You can author content using the familiar markdown syntax you already know. All basic markdown syntax is supported."
-date: 2022-11-02
+title: "[React] useEffect란?"
+description: "유튜브 별코딩 채널에서 공부한 내용입니다."
+date: 2023-03-26
 ---
 
 Markdown is powered by [Markdoc](https://markdoc.dev/). This is an example post to demonstrate all the basic markdown syntax. You can author content using the familiar markdown syntax you already know.
