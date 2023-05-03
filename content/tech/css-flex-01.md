@@ -1,6 +1,6 @@
 ---
 external: false
-title: "[CSS] Flex"
+title: "[CSS] Flex 1"
 description: "CSS Flex에 대해 공부하고 정리한 내용입니다."
 date: 2023-05-03
 ---
