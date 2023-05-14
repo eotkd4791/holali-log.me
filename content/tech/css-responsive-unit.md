@@ -1,6 +1,6 @@
 ---
 external: false
-title: "[CSS] 반응형 CSS 단위 총정리 | 홀랄리 디스크"
+title: "[CSS] 반응형 CSS 단위 총정리"
 description: "CSS에서 사용하는 단위에 대해 공부하고 정리한 내용입니다."
 date: 2023-05-14
 ---
