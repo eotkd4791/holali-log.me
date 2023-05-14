@@ -11,7 +11,7 @@ Flex란 웹사이트의 DOM Element들을 정렬하기 위한 속성이다. Flex
 
 ## Flex 적용하기
 
-item들을 정렬하기 위해서는 먼저 부모 요소에 flex 속성을 적용해야한다. 아래와 같은 html코드를 예로 들면 `parent` 클래스를 가진 요소에 적용하면 된다.
+item들을 정렬하기 위해서는 먼저 부모 요소에 flex 속성을 적용해야한다. 아래의 html코드를 예로 들면 `parent` 클래스를 가진 요소에 적용하면 된다.
 
 ```html
 <div class="parent">
@@ -34,6 +34,26 @@ item들을 정렬하기 위해서는 먼저 부모 요소에 flex 속성을 적�
 | ![before-flex](/images/tech/before-flex.png) | ![after-flex](/images/tech/after-flex.png) |
 
 flex를 적용하기 전에는 div 태그의 display 기본값이 block이기 때문에 각 child마다 하나의 열(column)을 차지했다. 하지만, flex를 적용한 후에는 각 자식 요소들의 내용물 만큼의 공간을 차지하게 된다. 따라서 하나의 열에 세 요소 모두 위치하게 된다.
+
+## Flex Wrap
+
+- 영역이 넘치면 어떻게 레이아웃을 배치할지에 대한 속성이다.
+- 기본값은 `no-wrap`: 영역이 넘쳐도 줄바꿈을 하지 않는다.
+- `wrap`으로 설정하면 줄바꿈이 된다.
+
+```css
+display: flex;
+flex-wrap: no-wrap; /* wrap | wrap-reverse */
+```
+
+이 속성은 `flex-direction`과 함께 묶어서 축약형으로도 사용이 가능하다.
+
+```css
+.container {
+  /* flex-flow: <flex-direction> <flex-wrap>; */
+  flex-flow: row wrap;
+}
+```
 
 ## 참고자료
 
