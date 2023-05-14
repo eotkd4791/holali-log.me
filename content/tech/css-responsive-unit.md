@@ -15,15 +15,17 @@ date: 2023-05-14
 
 ## 단위에 대한 설명
 
-1. **em (Relative to parent element)**
+### em (Relative to parent element)
 
-- 현재 지정된 font-size를 나타내는 단위이다.
-- 같은 font-size여도 다른 font-family를 사용한다면 사용자에게 보여지는 크기가 달라질 수 있다.
-- `em`은 선택된 font-family에 상관없이 항상 고정된 font-size를 가지고 있다.
+- 현재 지정된 `font-size`를 나타내는 단위이다.
+- 같은 `font-size`여도 다른 `font-family`를 사용한다면 사용자에게 보여지는 크기가 달라질 수 있다.
+- `em`은 선택된 `font-family에 상관없이 항상 고정된 font-size`를 가지고 있다.
 - `em`은 부모 요소의 font-size에 따른 상대적인 값이다.
+
   - HTML에서는 font-size의 `default`를 `16px`로 지정한다.
-  - 최상위 요소는 별도의 설정이 없다면 브라우저의 설정인 16px을 1em으로 계산한다ㅏ..
+  - 최상위 요소는 별도의 설정이 없다면 브라우저의 설정인 16px을 1em으로 계산한다.
   - 자식 요소는 부모 요소의 font-size를 1em으로 계산한다.
+  - `em`은 부모의 font-size를 곱하는 값이라는 점에서 `%`와 비슷하다.
 
 ```css
 /* 기본 설정 font-size: 16px */
@@ -44,9 +46,7 @@ date: 2023-05-14
 }
 ```
 
-`em`은 부모의 font-size를 곱하는 값이라는 점에서 `%`와 비슷하다.
-
-2. **%**
+### % (Percent)
 
 아래는 위의 예시와 같은 `font-size`로 계산된다.
 
@@ -69,7 +69,7 @@ date: 2023-05-14
 }
 ```
 
-3. **rem (Relative to root element)**
+### rem (Relative to root element)
 
 - 부모요소에 따라서 font-size가 결정되는 것이 아니라, root에 지정된 font-size에 따라 크기가 계산된다.
 
@@ -92,8 +92,6 @@ date: 2023-05-14
 }
 ```
 
----
-
 아래와 같이 `html`이나 `body`에서 `font-size`가 지정되어 있지 않으면 브라우저의 기본 설정 값인 `16px`을 기본 font-size로 따라간다. 아래처럼 고정값을 사용하면 브라우저에서 font-size를 변경해도 크기가 바뀌지 않는다.
 
 ```css
@@ -110,19 +108,17 @@ body {
 }
 ```
 
----
-
-4. **vw (Viewport width - viewport related)**
+### vw (Viewport width - viewport related)
 
 - 브라우저 너비에 따른 상대적인 값이다.
 - `100vw = 브라우저 너비의 100%만큼의 크기`라는 것을 의미함
 
-1. **vh (Viewport height - viewport related**
+### vh (Viewport height - viewport related)
 
 - 브라우저 높이에 따른 상대적인 값이다.
 - `100vh = 브라우저 높이의 100%만큼의 크기`라는 것을 의미함
 
-6. **vmin, vmax**
+### vmin, vmax
 
 - 브라우저의 높이와 너비 중 작은 or 큰 값
 - `50vmin = 높이와 너비중 작은 값의 50%`
