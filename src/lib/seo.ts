@@ -146,13 +146,13 @@ export function getBlogPostMeta({
   }
 
   const meta: PageMeta = {
-    title: pageTitle,
+    title: `${pageTitle} | 홀랄리 디스크`,
     description: description,
     canonicalUrl,
   };
 
   const og: BlogPostOgMeta = {
-    title: pageTitle,
+    title: `${pageTitle} | 홀랄리 디스크`,
     description: description,
     type: "article",
     url: pageUrl,
@@ -165,7 +165,7 @@ export function getBlogPostMeta({
   };
 
   const twitter: BlogPostTwitterMeta = {
-    title: pageTitle,
+    title: `${pageTitle} | 홀랄리 디스크`,
     description: description,
     card: "summary_large_image",
     site: siteOwnerTwitterHandle,
