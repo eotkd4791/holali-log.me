@@ -26,3 +26,5 @@ pnpm-debug.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+./content/tech/extended-markdown-style-guide.md
