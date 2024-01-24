@@ -1,11 +1,51 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+import type { Site, SocialObjects } from "./types";
 
-export const SITE_TITLE = "홀랄리 디스크";
-export const SITE_DESCRIPTION = "blog for review";
-export const TWITTER_HANDLE = "@devstef_";
-export const MY_NAME = "stefan you";
+export const SITE: Site = {
+  website: "https://daesae.me", // replace this with your deployed domain
+  author: "daesae.me",
+  desc: "유대상의 개발일지",
+  title: "개발F념",
+  ogImage: "astropaper-og.jpg",
+  lightAndDarkMode: true,
+  postPerPage: 3,
+  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+};
 
-// setup in astro.config.mjs
-const BASE_URL = new URL(import.meta.env.SITE);
-export const SITE_URL = BASE_URL.origin;
+export const LOCALE = {
+  lang: "ko", // html lang code. Set this empty and default will be "en"
+  langTag: ["ko-KR"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+} as const;
+
+export const LOGO_IMAGE = {
+  enable: false,
+  svg: true,
+  width: 216,
+  height: 46,
+};
+
+export const SOCIALS: SocialObjects = [
+  {
+    name: "Github",
+    href: "https://github.com/eotkd4791",
+    linkTitle: ` ${SITE.title} on Github`,
+    active: true,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/daesang-stephen-you",
+    linkTitle: `${SITE.title} on LinkedIn`,
+    active: true,
+  },
+  {
+    name: "Mail",
+    href: "mailto:eotkd4791@kakao.com",
+    linkTitle: `Send an email to ${SITE.title}`,
+    active: true,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/@devstef_",
+    linkTitle: `${SITE.title} on Twitter`,
+    active: true,
+  },
+];
