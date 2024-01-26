@@ -26,11 +26,14 @@ _저의 궁극적인 목표는 “사람들이 열광하는 서비스”를 개�
 
 2. **글로벌 송금 서비스 개발**
 
-- as
+- 사용자 개인정보 입력 폼 개발
+- 받는 사람 정보 입력 폼 개발
+- 송금 내역 페이지 개발
 
 3. **수취인 실명인증 서비스 개발**
 
-- as
+- 해외에서 한국으로 송금하는 경우에 필요한 실명인증 서비스 개발
+- 자동 승인 프로세스 개발
 
 ### FE Developer (버블콘) 2020.10.05 ~ 2021.08.31 (11개월)
 
@@ -49,7 +52,7 @@ _저의 궁극적인 목표는 “사람들이 열광하는 서비스”를 개�
 
 - JavaScript, TypeScript
 - ReactJS, NextJS
-- TailwindCSS
+- TailwindCSS, emotion
 - Jotai, React Query
 - React Hook Form
 - Monorepo(Yarn Berry), Sentry
