@@ -3,7 +3,7 @@ author: 유대상
 pubDatetime: 2024-01-24T16:43:06.135Z
 modDatetime: 2024-01-24T16:43:06.135Z
 title: AWS구조와 서비스 Chapter5 (Part6 ~ 9)
-slug: aws-structure-service-chap5-part6to9
+slug: aws구조와_서비스_chap5-2
 featured: false
 draft: false
 tags:
@@ -71,8 +71,9 @@ AWS가 제공하는 CDN 서비스이다. 파일, 컨텐츠 등을 효과적으�
    - AWS와 온프레미스 환경 사이에 전용선을 만드는 서비스
 
 2. AWS VPN
-   i) AWS Site-to-Site VPN: 두 사이트를 연결하는 VPN 구성이 목적
-   ii) AWS Client VPN: 원격 VPN을 이용해 AWS에 연결하는 서비스
+
+   - i) AWS Site-to-Site VPN: 두 사이트를 연결하는 VPN 구성이 목적
+   - ii) AWS Client VPN: 원격 VPN을 이용해 AWS에 연결하는 서비스
 
 3. AWS Transit Gateway
 
