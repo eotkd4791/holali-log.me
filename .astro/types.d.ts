@@ -175,13 +175,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"aws/aws구조와_서비스_chap5-2.md": {
-	id: "aws/aws구조와_서비스_chap5-2.md";
-  slug: "aws구조와_서비스_chap5-2";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 };
 
 	};
