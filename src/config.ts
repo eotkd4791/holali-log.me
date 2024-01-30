@@ -1,8 +1,8 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://daesae.me", // replace this with your deployed domain
-  author: "daesae.me",
+  website: "https://eotkd4791.github.io", // replace this with your deployed domain
+  author: "유대상",
   desc: "유대상의 개발일지",
   title: "개발F념",
   ogImage: "astropaper-og.jpg",
