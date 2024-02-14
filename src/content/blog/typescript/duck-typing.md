@@ -26,7 +26,7 @@ description: 오리처럼 걷고 오리처럼 꽥꽥거리면, 그것은 오리�
 > "If it walks like a duck and it quacks like a duck, then it must be a duck
 > 오리처럼 걷고 오리처럼 꽥꽥거리면, 그것은 오리이다.
 
-![Duck Typing](https://devopedia.org/images/article/24/2998.1514520209.jpg)
+![Duck Typing](/src/assets/images/duck-typing.jpg)
 
 [이미지 출처](https://devopedia.org/duck-typing)
 
