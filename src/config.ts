@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://eotkd4791.github.io", // replace this with your deployed domain
   author: "유대상",
-  desc: "유대상의 개발일지",
+  desc: "유대상의 블로그",
   title: "개발F념",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -32,7 +32,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/daesang-stephen-you",
+    href: "https://www.linkedin.com/in/daesang-stefan-you",
     linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },
