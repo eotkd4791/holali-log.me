@@ -190,6 +190,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"web": {
+"onVisibilityChage란.md": {
+	id: "onVisibilityChage란.md";
+  slug: "visibilityChange";
+  body: string;
+  collection: "web";
+  data: any
+} & { render(): Render[".md"] };
+};
 
 	};
 
