@@ -182,6 +182,34 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"cleancode/cleancode-chap3.md": {
+	id: "cleancode/cleancode-chap3.md";
+  slug: "clean_code3";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"cleancode/cleancode-chap4.md": {
+	id: "cleancode/cleancode-chap4.md";
+  slug: "cleancode/cleancode-chap4";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"cleancode/cleancode-chap7.md": {
+	id: "cleancode/cleancode-chap7.md";
+  slug: "clean_code7";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"frontend/nextjs-routing.md": {
+	id: "frontend/nextjs-routing.md";
+  slug: "nextjs";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "typescript/duck-typing.md": {
 	id: "typescript/duck-typing.md";
   slug: "duck-typing";
@@ -189,14 +217,12 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-};
-"web": {
-"onVisibilityChage란.md": {
-	id: "onVisibilityChage란.md";
-  slug: "visibilityChange";
+"web/사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange).md": {
+	id: "web/사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange).md";
+  slug: "visibilitychange";
   body: string;
-  collection: "web";
-  data: any
+  collection: "blog";
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 
