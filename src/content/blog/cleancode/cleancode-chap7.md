@@ -4,7 +4,7 @@ title: 클린코드 Chap7. 오류 처리
 slug: clean_code7
 featured: false
 draft: false
-pubDatetime: 2024-03-26T01:38:03.506Z
+pubDatetime: 2024-03-11T01:38:03.506Z
 tags:
   - clean-code
 description: 클린코드 7장을 읽고 정리한 내용입니다.
