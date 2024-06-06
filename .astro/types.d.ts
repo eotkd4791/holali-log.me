@@ -189,13 +189,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"cleancode/cleancode-chap4.md": {
-	id: "cleancode/cleancode-chap4.md";
-  slug: "cleancode/cleancode-chap4";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "cleancode/cleancode-chap7.md": {
 	id: "cleancode/cleancode-chap7.md";
   slug: "clean_code7";

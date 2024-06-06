@@ -27,7 +27,7 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      theme: "material-theme-darker",
+      theme: "poimandres",
       wrap: true,
     },
   },
