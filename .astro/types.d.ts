@@ -196,13 +196,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"frontend/nextjs-routing.md": {
-	id: "frontend/nextjs-routing.md";
-  slug: "nextjs";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "typescript/duck-typing.md": {
 	id: "typescript/duck-typing.md";
   slug: "duck-typing";
