@@ -1,6 +1,6 @@
 ---
 author: 유대상
-title: 클린코드 Chap7. 오류 처리
+title: "[클린코드] Chap7. 오류 처리"
 slug: clean_code7
 featured: false
 draft: false

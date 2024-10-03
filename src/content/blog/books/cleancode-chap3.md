@@ -1,6 +1,6 @@
 ---
 author: 유대상
-title: 클린코드 Chap3. 함수
+title: "[클린코드] Chap3. 함수"
 slug: clean_code3
 featured: false
 draft: false
