@@ -175,22 +175,22 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"aws/aws구조와_서비스_chap5-2.md": {
-	id: "aws/aws구조와_서비스_chap5-2.md";
+"books/aws구조와_서비스_chap5-2.md": {
+	id: "books/aws구조와_서비스_chap5-2.md";
   slug: "aws구조와_서비스_chap5-2";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"cleancode/cleancode-chap3.md": {
-	id: "cleancode/cleancode-chap3.md";
+"books/cleancode-chap3.md": {
+	id: "books/cleancode-chap3.md";
   slug: "clean_code3";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"cleancode/cleancode-chap7.md": {
-	id: "cleancode/cleancode-chap7.md";
+"books/cleancode-chap7.md": {
+	id: "books/cleancode-chap7.md";
   slug: "clean_code7";
   body: string;
   collection: "blog";
@@ -205,7 +205,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "web/사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange).md": {
 	id: "web/사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange).md";
-  slug: "visibilitychange";
+  slug: "visibility-change";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

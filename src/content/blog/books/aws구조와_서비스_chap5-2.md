@@ -1,7 +1,7 @@
 ---
 author: 유대상
 pubDatetime: 2024-01-24T16:43:06.135Z
-title: "[AWS구조와 서비스]" Chapter5 (Part6 ~ 9)"
+title: "[AWS구조와 서비스] Chapter5 (Part6 ~ 9)"
 slug: aws구조와_서비스_chap5-2
 featured: false
 draft: false

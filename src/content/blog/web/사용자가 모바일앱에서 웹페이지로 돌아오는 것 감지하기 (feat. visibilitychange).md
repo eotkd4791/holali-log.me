@@ -1,7 +1,7 @@
 ---
 author: 유대상
 pubDatetime: 2024-02-15T16:09:42.973Z
-title: 사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange)
+title: "사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지하기 (feat. visibilitychange)"
 slug: visibility-change
 featured: false
 draft: false
