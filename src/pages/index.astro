@@ -28,7 +28,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
-                index < 4 && (
+                index <  20 && (
                   <Card
                     href={`/posts/${slug}`}
                     frontmatter={data}
