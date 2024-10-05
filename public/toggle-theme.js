@@ -49,7 +49,6 @@ function reflectPreference() {
 }
 
 function changeGiscusTheme() {
-  console.log("changegiscus");
   const theme =
     document.documentElement.getAttribute("data-theme") === "dark"
       ? "dark"
