@@ -7,8 +7,10 @@ featured: false
 draft: false
 tags:
   - regular-expression
-description: 파일 업로드 기능을 구현하면서 생각한 것들을 정리한 글입니다.
+description: 정규 표현식에 대해 공부한 글입니다.
 ---
+
+![정규표현식](@assets/images/regexp_intro.png)
 
 ### # 정규표현식
 
@@ -224,7 +226,7 @@ const findMatch = text.match(/\w+(?:\.com|\.github\.io|\.org)/i); //eotkd4791.gi
 
 문자로 시작하고, .com, .github.io, .org로 이루어진 문자열을 찾아내는 정규식이다.
 
-## 적극적 일치(greedy matching)와 소극적 일치(lazy matching)
+### # 적극적 일치(greedy matching)와 소극적 일치(lazy matching)
 
 정규식에서 매우 중요한 개념이다. 정규식은 기본적으로 적극적 일치 기반의 검색을 한다. 예제를 통해서 정규식의 기본적인 특성을 파악해보자.
 
@@ -388,6 +390,8 @@ diary.match(labRegExp);
 ```
 
 정규식 리터럴로는 사용자의 이름을 알아낼 수 없기 때문에 정규식 생성자를 이용하여 동적으로 정규식을 작성하였다.
+
+다음 포스팅엔 정규표현식을 어떻게 적용하는지 알아보겠다.
 
 ### # 참고 자료
 
