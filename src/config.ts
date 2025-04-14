@@ -31,12 +31,6 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/daesang-stefan-you",
-    linkTitle: `${SITE.author} on LinkedIn`,
-    active: true,
-  },
-  {
     name: "Mail",
     href: "mailto:eotkd4791@kakao.com",
     linkTitle: `Send an email to ${SITE.author}`,
