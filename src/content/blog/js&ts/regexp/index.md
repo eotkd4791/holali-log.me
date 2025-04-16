@@ -10,7 +10,7 @@ tags:
 description: 정규 표현식에 대해 공부한 글입니다.
 ---
 
-![정규표현식](@assets/images/regexp_intro.png)
+![정규표현식](./regexp_intro.png)
 
 ### # 정규표현식
 
@@ -100,7 +100,7 @@ K O R E A N K E T C H U P P C H I P S<br>
 
 이러한 방식으로 문자열을 검색한다. 따라서 "KOR", "KETCHUP", "CHIPS"를 찾을 수 있다. "KOREA", "KOREAN"은 "KOR"을 찾자마자 모두 소비하기 때문에 "EA", "EAN"으로만 인식한다. 따라서 찾지 못한다.
 
-![입력 소비 결과](@assets/images/regexp1.png)
+![입력 소비 결과](./regexp1.png)
 
 ### # 메타 문자 및 정규식 작성 방법
 
@@ -239,7 +239,7 @@ const tt =
 tt.replace(/<div>(.*)<\/div>/gi, "<span>$1</span>");
 ```
 
-![출력 결과](@assets/images/regexp2.png)
+![출력 결과](./regexp2.png)
 
 다음과 같이 \<span\>const\</div\> and \<div\>let\</span\>으로 나온다. 기본적인 정규식은 적극적 일치 기반의 검색을 한다고 앞서 언급했다. 정규식은 \<div>를 만나면 \</div\>를 못 찾을 때까지 확장하여 검색을 진행한다. 기존의 문자열에는 \</div\>가 두 개 있다. 따라서 정규식은 뒤의 \</div\>를 검색할 때 비로소 일치한다고 판단하고, 문자열을 교체한다.
 
@@ -249,7 +249,7 @@ tt.replace(/<div>(.*)<\/div>/gi, "<span>$1</span>");
 tt.replace(/<div>(.*?)<\/div>/gi, "<span>$1</span>");
 ```
 
-![출력 결과](@assets/images/regexp3.png)
+![출력 결과](./regexp3.png)
 
 정규식 내부의 그룹에 ?를 하나 추가했다. \*연산자 뒤에 ?를 쓰면 소극적 일치를 의미한다. 즉 \<div>태그 뒤로 오는 문자열을 $1에 담고 \</div\>를 만나자마자 바로 일치하는 것을 찾았다고 판단한다. 또한 적극적 일치와 달리 검색 범위를 확장하려고 하지 않는다.
 
