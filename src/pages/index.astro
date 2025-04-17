@@ -8,13 +8,18 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 // import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
+import getSortedLives from "@utils/getSortedLives";
 // import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
+const lives = await getCollection("essay");
 
 const sortedPosts = getSortedPosts(posts);
+const sortedLives = getSortedLives(lives);
 // const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const recentLives = sortedLives.filter(({ data }) => !data.featured);
+const recentArticles = [...recentPosts, ...recentLives].sort((a,b) => new Date(b.data.pubDatetime).getTime() - new Date(a.data.pubDatetime).getTime());
 
 // const socialCount = SOCIALS.filter(social => social.active).length;
 ---
@@ -23,14 +28,14 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content">
     <section id="hero">
-    {recentPosts.length > 0 && (
+    {recentArticles.length > 0 && (
         <section id="recent-posts">
           <ul>
-            {recentPosts.map(
-              ({ data, slug }, index) =>
+            {recentArticles.map(
+              ({ data, slug}, index) =>
                 index <  20 && (
                   <Card
-                    href={`/posts/${slug}`}
+                    href={data.type === "blog" ? `/posts/${slug}` : `/life/${slug}`}
                     frontmatter={data}
                     secHeading={false}
                   />

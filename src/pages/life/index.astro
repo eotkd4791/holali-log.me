@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import Lives from "@layouts/Lives.astro";
+import getSortedLives from "@utils/getSortedLives";
+import getPagination from "@utils/getPagination";
+
+const lives = await getCollection("essay");
+
+const sortedLives = getSortedLives(lives);
+
+const pagination = getPagination({
+  posts: sortedLives,
+  page: 1,
+  isIndex: true,
+});
+---
+
+<Lives {...pagination} />

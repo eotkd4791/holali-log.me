@@ -8,18 +8,18 @@ const shareLinks = [
   {
     name: "Twitter",
     href: "https://twitter.com/intent/tweet?url=",
-    linkTitle: `Tweet this post`,
+    linkTitle: '트위터에서 이 게시글 공유하기',
   },
   {
     name: "Mail",
     href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `Share this post via email`,
+    linkTitle: '이 게시글 이메일로 공유하기',
   },
 ] as const;
 ---
 
 <div class={`social-icons`}>
-  <span class="italic">Share this post on:</span>
+  <span class="italic">공유하기</span>
   <div class="text-center">
     {
       shareLinks.map(social => (

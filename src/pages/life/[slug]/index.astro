@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Lives from "@layouts/Lives.astro";
+import LifeDetails from "@layouts/LifeDetails.astro";
+import getSortedLives from "@utils/getSortedLives";
+import getPageNumbers from "@utils/getPageNumbers";
+import getPagination from "@utils/getPagination";
+
+export interface Props {
+  life: CollectionEntry<"essay">;
+}
+
+export async function getStaticPaths() {
+  const lives = await getCollection("essay", ({ data }) => !data.draft);
+
+  const lifeResult = lives.map(life => ({
+    params: { slug: life.slug },
+    props: { life },
+  }));
+
+  const pagePaths = getPageNumbers(lives.length).map(pageNum => ({
+    params: { slug: String(pageNum) },
+  }));
+
+  return [...lifeResult, ...pagePaths];
+}
+
+const { slug } = Astro.params;
+const { life } = Astro.props;
+
+const lives = await getCollection("essay");
+
+const sortedLives = getSortedLives(lives);
+
+const pagination = getPagination({
+  posts: sortedLives,
+  page: slug,
+});
+---
+
+{life ? <LifeDetails life={life} /> : <Lives {...pagination} />}

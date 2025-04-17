@@ -9,15 +9,20 @@ import getUniqueTags from "@utils/getUniqueTags";
 import { SITE } from "@config";
 
 const posts = await getCollection("blog");
+const lives = await getCollection("essay");
 
-let tags = getUniqueTags(posts);
+const postTags = getUniqueTags(posts);
+const lifeTags = getUniqueTags(lives);
 ---
 
-<Layout title={`Tags | ${SITE.title}`}>
+<Layout title={`태그 | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
+  <Main pageTitle="태그" pageDesc="글 쓰는 데에 사용한 모든 태그.">
     <ul>
-      {tags.map(({ tag }) => <Tag {tag} size="lg" />)}
+      {postTags.map(({ tag }) => <Tag {tag} size="lg" />)}
+    </ul>
+    <ul>
+      {lifeTags.map(({ tag }) => <Tag {tag} size="lg" />)}
     </ul>
   </Main>
   <Footer />
