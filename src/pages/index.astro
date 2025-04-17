@@ -35,7 +35,7 @@ const recentArticles = [...recentPosts, ...recentLives].sort((a,b) => new Date(b
               ({ data, slug}, index) =>
                 index <  20 && (
                   <Card
-                    href={data.type === "blog" ? `/posts/${slug}` : `/life/${slug}`}
+                    href={data.type === "essay" ? `/life/${slug}` : `/posts/${slug}`}
                     frontmatter={data}
                     secHeading={false}
                   />

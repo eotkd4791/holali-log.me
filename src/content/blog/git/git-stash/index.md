@@ -5,6 +5,7 @@ title: "업무 중에 git stash로 잽싸게 문맥 교환 해버리기"
 slug: git-stash
 featured: false
 draft: false
+type: tech
 tags:
   - git
 description: "git stash를 이용하여 다른 작업으로 쉽게 전환하고, 작업 속도를 높일 수 있는 방법에 대해 작성했습니다."

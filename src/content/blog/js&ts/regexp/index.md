@@ -5,6 +5,7 @@ title: "극한의 Form Validation을 이롭게 해주는 정규표현식, 제가
 slug: regular-expression
 featured: false
 draft: false
+type: tech
 tags:
   - regular-expression
 description: 정규 표현식에 대해 공부한 글입니다.

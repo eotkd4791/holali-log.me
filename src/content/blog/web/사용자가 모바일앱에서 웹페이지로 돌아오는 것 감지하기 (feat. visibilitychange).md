@@ -5,6 +5,7 @@ title: "사용자가 모바일앱에서 웹페이지로 돌아오는 것 감지�
 slug: visibility-change
 featured: false
 draft: false
+type: tech
 tags:
   - JS
   - DOM

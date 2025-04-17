@@ -5,6 +5,7 @@ title: "가독성 높이는 컴포넌트 설계 (feat. 컴파운드 컴포넌트
 slug: react-component-design
 featured: false
 draft: false
+type: tech
 tags:
   - react
 description: "컴포넌트를 설계하면서 고민한 내용을 공유합니다."
