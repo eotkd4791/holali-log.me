@@ -85,14 +85,14 @@ git revert -m 2 M
 ### `-m`을 명시하는 경우:
 
 - 머지 커밋에서 특정 부모를 기준으로 변경사항을 계산한다
-- `-m 1`은 보통 "메인라인에 다른 브랜치의 변경사항을 적용했다"는 관점을 취한다 (가장 일반적인 사용)
+- `-m 1`은 보통 "main 라인에 다른 브랜치의 변경사항을 적용했다"는 관점을 취한다 (가장 일반적인 사용)
 - `-m 2`는 보통 반대 방향의 관점을 취한다 (드물게 사용)
 
 ## 시각적 이해
 
 머지 커밋 구조:
 
-[![](./commit-flow.svg)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
+[![](./commit-flow.png)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
 
 여기서 M은 머지 커밋이며:
 
@@ -101,7 +101,7 @@ git revert -m 2 M
 
 ### `-m 1`과 `-m 2`의 관점 차이:
 
-[![](./commit-cherry-pick-example.svg)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
+[![](./commit-cherry-pick-example.png)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
 
 **`-m 1` 사용 시 (일반적인 경우):**
 
@@ -115,4 +115,4 @@ git revert -m 2 M
 
 ## 결론
 
-대부분의 워크플로우에서는 `-m 1`을 사용하는 것이 일반적이며, 이는 "메인 브랜치에 feature 브랜치의 변경사항을 적용/제거한다"는 의미이다. 올바른 `-m` 값 선택은 프로젝트의 브랜칭 전략과 워크플로우에 따라 달라질 수 있다.
+대부분의 워크플로우에서는 `-m 1`을 사용하는 것이 일반적이며, 이는 "main 브랜치에 feature 브랜치의 변경사항을 적용/제거한다"는 의미이다. 올바른 `-m` 값 선택은 프로젝트의 브랜칭 전략과 워크플로우에 따라 달라질 수 있다.
