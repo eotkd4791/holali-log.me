@@ -4,7 +4,7 @@ pubDatetime: 2025-04-27T15:03:18.764Z
 title: "@media와 @container는 뭐가 다를까?"
 slug: media-query_vs_container-query
 featured: false
-draft: false
+draft: true
 type: tech
 tags:
   - css
@@ -51,7 +51,7 @@ CSS에서 반응형 웹을 구현할 때 흔히 사용하는 미디어 쿼리는
 
 컨테이너 쿼리는 특정 요소(컨테이너)의 크기를 기준으로 스타일을 적용하는 방법이다. 즉, 브라우저 전체가 아니라 개별 컴포넌트나 레이아웃 블록의 크기에 따라 스타일을 다르게 만들 수 있다.
 
-컨테이너 쿼리를 사용하기 위해서는 부모 요소에 container-type 속성을 설정해야 한다.
+<!-- 컨테이너 쿼리를 사용하기 위해서는 부모 요소에 container-type 속성을 설정해야 한다. -->
 
 ```css
 /* 컨테이너 설정 */
