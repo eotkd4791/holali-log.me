@@ -92,7 +92,7 @@ git revert -m 2 M
 
 머지 커밋 구조:
 
-![](./commit-flow.svg)
+[![](./commit-flow.svg)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
 
 여기서 M은 머지 커밋이며:
 
@@ -101,7 +101,7 @@ git revert -m 2 M
 
 ### `-m 1`과 `-m 2`의 관점 차이:
 
-![](./commit-cherry-pick-example.svg)
+[![](./commit-cherry-pick-example.svg)](https://www.mermaidchart.com/raw/a892619c-5c78-4e82-8299-1f8f9a4076ff?theme=light&version=v0.1&format=svg)
 
 **`-m 1` 사용 시 (일반적인 경우):**
 
