@@ -26,7 +26,7 @@ RLS는 그냥 보안 설정이 아니라, 데이터에 대한 권리와 책임�
 - [알아두면 좋은 함수, 예약어들](#알아두면-좋은-함수-예약어들)
   - [함수/예약어 설명](#함수예약어-설명)
 - [PERMISSIVE vs RESTRICTIVE](#permissive-vs-restrictive)
-- [target roles: anon, authenticated, service_role...](#target-roles-anon-authenticated-service_role)
+- [정책 적용의 대상이 되는 역할(target roles)](#정책-적용의-대상이-되는-역할target-roles)
   - [역할 설명](#역할-설명)
 - [실전에서 내가 작성한 RLS 정책들](#실전에서-내가-작성한-rls-정책들)
 - [참고자료](#참고자료)
@@ -51,7 +51,7 @@ CREATE POLICY "Allow user to select their own data"
 ON users
 AS PERMISSIVE
 FOR SELECT
-USING (auth_id = auth.uid()::text);
+USING (auth_id = auth.uid());
 ```
 
 ```sql
@@ -60,7 +60,7 @@ CREATE POLICY "Allow user to insert self"
 ON users
 AS PERMISSIVE
 FOR INSERT
-WITH CHECK (auth_id = auth.uid()::text);
+WITH CHECK (auth_id = auth.uid());
 ```
 
 - SELECT: USING만 필요.
@@ -80,14 +80,6 @@ WITH CHECK (auth_id = auth.uid()::text);
 - `current_user`: DB 세션의 로컬 사용자명 (거의 안 씀)
 - `jwt.claims.email`: JWT 토큰에 포함된 email claim
 
-특히 auth.uid()는 거의 모든 RLS에서 중심이 된다. Supabase의 인증 시스템은 UUID 기반이기 때문에,
-내가 만든 테이블에 유저를 연결하려면 auth_id 같은 필드를 만들어서 텍스트로 저장하고, 정책에서는 이렇게 비교한다.
-
-```sql
--- auth.uid()는 uuid인데, auth_id는 text이기 때문에 캐스팅 필요
-auth_id = auth.uid()::text
-```
-
 ## PERMISSIVE vs RESTRICTIVE
 
 처음 정책을 여러 개 만들고 나서, 정책이 두 개일 땐 어떻게 동작할지 궁금했다.
@@ -106,7 +98,7 @@ Supabase는 정책의 조합을 설정할 수 있다. 기본값은 PERMISSIVE, �
 - `PERMISSIVE`라면 둘 중 하나만 만족해도 row를 SELECT할 수 있다.
 - `RESTRICTIVE`라면 둘 다 만족해야만 SELECT된다.
 
-## target roles: anon, authenticated, service_role...
+## 정책 적용의 대상이 되는 역할(target roles)
 
 처음에는 RLS에 TO authenticated, TO anon 같은 문구가 있어서 이게 뭔지 몰랐다.
 
@@ -128,7 +120,7 @@ ON payments
 AS PERMISSIVE
 FOR SELECT
 TO authenticated
-USING (auth_id = auth.uid()::text);
+USING (auth_id = auth.uid());
 ```
 
 service_role은 Supabase Edge Function이나 서버 측에서 admin 권한으로 호출할 때 사용된다.
@@ -144,8 +136,8 @@ CREATE POLICY "Update own profile"
 ON designers
 AS PERMISSIVE
 FOR UPDATE
-USING (auth_id = auth.uid()::text)
-WITH CHECK (auth_id = auth.uid()::text);
+USING (auth_id = auth.uid())
+WITH CHECK (auth_id = auth.uid());
 ```
 
 ```sql
@@ -163,7 +155,7 @@ CREATE POLICY "User can view their own payments"
 ON payments
 AS PERMISSIVE
 FOR SELECT
-USING (auth_id = auth.uid()::text);
+USING (auth_id = auth.uid());
 ```
 
 ## 참고자료
