@@ -88,11 +88,11 @@ HTTP/1.1부터 도입된 표준 캐시 제어 헤더이다. Expires 대신 사�
 
 ### HTML 문서 갱신 문제
 
-새로운 배포 후에도 브라우저에서 구버전 HTML이 유지되는 경우, 브라우저가 HTML을 캐시하고 있기 때문이다. Cache-Control: no-cache, must-revalidate를 설정하여 서버 재검증을 강제해야 한다. 최신 HTML을 통해 최신 JS와 CSS가 로딩되므로 중요하다.
+새로운 배포 후에도 브라우저에서 구버전 HTML이 유지되는 경우, 브라우저가 HTML을 캐시하고 있기 때문이다. `Cache-Control: no-cache, must-revalidate`를 설정하여 서버 재검증을 강제해야 한다. 최신 HTML을 통해 최신 JS와 CSS가 로딩되므로 중요하다.
 
 ### 로그인 정보 노출 문제
 
-공용 캐시가 설정된 경우, 다른 사용자의 데이터가 잘못 보여질 수 있다. 이를 방지하기 위해 로그인 후 응답에는 Cache-Control: private 또는 no-store를 반드시 적용해야 한다.
+공용 캐시가 설정된 경우, 다른 사용자의 데이터가 잘못 보여질 수 있다. 이를 방지하기 위해 로그인 후 응답에는 `Cache-Control: private 또는 no-store`를 반드시 적용해야 한다.
 
 ## 정리
 
