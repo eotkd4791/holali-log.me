@@ -1,6 +1,6 @@
 ---
 author: 유대상
-pubDatetime: 2025-06-01T23:48:48.688Z
+pubDatetime: 2025-06-01T14:00:19Z
 title: "모달에서 focus trap 챙기기"
 slug: focus-trap
 featured: false
