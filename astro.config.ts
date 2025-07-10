@@ -27,7 +27,7 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      theme: "poimandres",
+      theme: "slack-dark",
       wrap: true,
     },
   },
