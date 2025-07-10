@@ -1,6 +1,6 @@
 ---
 author: 유대상
-pubDatetime: 2025-07-09T13:58:12Z
+pubDatetime: 2025-07-09T23:58:12Z
 title: "테스트 더블(Test Double)이란?"
 slug: test_double
 featured: false
