@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to access sitemap
+Sitemap: https://holali-log.me/sitemap-index.xml
