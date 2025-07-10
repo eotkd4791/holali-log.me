@@ -11,9 +11,12 @@ tags:
 description: "테스트 더블(Test Double)에 대해서 정리한 글입니다."
 ---
 
+## 개요
+
+테스트 코드를 공부하면서 외부 의존성을 간편하게 대체하여 테스트를 도와주는 Mock, Spy를 자주 사용해왔다. 하지만 그 둘의 차이를 명확하게 알지 못한 채 사용해왔다. 이런 객체를 아우르는 "테스트 더블(Test Double)" 이라는 용어를 살펴보고, 테스트 더블의 종류와 차이에 대해서 알아보려고 한다.
+
 ## 목차
 
-- [개요](#개요)
 - [테스트 더블(Test Double)이란?](#테스트-더블test-double이란)
 - [테스트 더블의 종류](#테스트-더블의-종류)
   - [1. 더미(Dummy)](#1-더미dummy)
@@ -23,10 +26,6 @@ description: "테스트 더블(Test Double)에 대해서 정리한 글입니다.
   - [5. 페이크(Fake)](#5-페이크fake)
 - [Mock vs Stub](#mock-vs-stub)
 - [참고자료](#참고자료)
-
-## 개요
-
-테스트 코드를 공부하면서 외부 의존성을 간편하게 대체하여 테스트를 도와주는 Mock, Spy를 자주 사용해왔다. 하지만 그 둘의 차이를 명확하게 알지 못한 채 사용해왔다. 이런 객체를 아우르는 "테스트 더블(Test Double)" 이라는 용어를 살펴보고, 테스트 더블의 종류와 차이에 대해서 알아보려고 한다.
 
 ## 테스트 더블(Test Double)이란?
 
@@ -114,3 +113,4 @@ Stub과 비교를 해보자. Stub은 반환값을 사용하여 출력 결과를 
 ## 참고자료
 
 - [Martin Fowler - Test Double](https://martinfowler.com/bliki/TestDouble.html)
+- [Martin Fowler - Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)
