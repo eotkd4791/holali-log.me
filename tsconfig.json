@@ -13,5 +13,6 @@
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "public", "dist", "src/layouts/Layout.astro"]
 }
