@@ -14,7 +14,9 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     react(),
-    sitemap(),
+    sitemap({
+      filter: () => true,
+    }),
   ],
   markdown: {
     remarkPlugins: [
