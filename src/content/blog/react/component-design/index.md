@@ -129,10 +129,7 @@ function MultipleFileUpload() {
 위와 같이 역할을 쪼개니 각 부분의 역할이 명확해져서 읽기도 편하고 추후 수정이 있더라도 유연하게 대응할 수 있을 것 같았다. 위에서 쪼갠대로 `컴포넌트로 추상화`한 후, 그 `컴포넌트들을 합성`하는 식으로 사용하면 `가독성`과 `재사용성`을 향상할 수 있겠다는 생각이 들었다.
 
 ```tsx
-function FileUpload({
-  children,
-  ...formAttrs
-}: PropsWithChildren<FileUploadProps>) {
+function FileUpload({ children, ...formAttrs }: PropsWithChildren<FileUploadProps>) {
   return <form {...formAttrs}>{children}</form>;
 }
 
@@ -148,12 +145,7 @@ function FileUploadPreview({ children }: PropsWithChildren) {
   return <ol>{children}</ol>;
 }
 
-function FileUploadPreviewItem({
-  children,
-  file,
-  w,
-  h,
-}: PropsWithChildren<FileUploadPreviewItemProps>) {
+function FileUploadPreviewItem({ children, file, w, h }: PropsWithChildren<FileUploadPreviewItemProps>) {
   const imageUrl = useMemo(() => URL.createObjectURL(file), [file]);
 
   return (
@@ -164,11 +156,7 @@ function FileUploadPreviewItem({
   );
 }
 
-function FileUploadPreviewTrigger({
-  children,
-  asChild,
-  as,
-}: FileUploadPreviewTriggerProps) {
+function FileUploadPreviewTrigger({ children, asChild, as }: FileUploadPreviewTriggerProps) {
   return asChild ? <button>{children}</button> : <>{as}</>;
 }
 
@@ -187,19 +175,12 @@ function MultipleFileUpload() {
   // ...
   return (
     <FileUpload onSubmit={onSubmit}>
-      <FileUpload.Box
-        multiple
-        onChange={onChange}
-        onDrop={onDrop}
-        accept="image/*, .pdf"
-      />
+      <FileUpload.Box multiple onChange={onChange} onDrop={onDrop} accept="image/*, .pdf" />
       {files.length > 0 ? (
         <FileUpload.Preview>
           {files.map((file) => (
             <FileUpload.PreviewItem key={file.name} file={file} w={64} h={64}>
-              <FileUpload.PreviewTrigger
-                as={<DeleteIcon onClick={onDelete(file)} />}
-              />
+              <FileUpload.PreviewTrigger as={<DeleteIcon onClick={onDelete(file)} />} />
             </FileUpload.PreviewItem>
           ))}
         </FileUpload.Preview>
@@ -220,19 +201,14 @@ function MultipleFileUpload() {
 function useFileUpload() {
   const [files, _setFiles] = useState<File[]>([]);
 
-  const convertListToArray = useCallback(
-    (fileList: FileList) => Array.from(fileList),
-    []
-  );
+  const convertListToArray = useCallback((fileList: FileList) => Array.from(fileList), []);
 
   const addFiles = useCallback((files: File[]) => {
     _setFiles((previousFiles) => previousFiles.concat(files));
   }, []);
 
   const deleteFile = useCallback((file: File) => {
-    _setFiles((currentFiles) =>
-      currentFiles.filter((f) => f.name !== file.name)
-    );
+    _setFiles((currentFiles) => currentFiles.filter((f) => f.name !== file.name));
   }, []);
 
   return {
@@ -246,9 +222,9 @@ function useFileUpload() {
 
 ### # 결론
 
-전체 코드는 역할에 따라 나눈 컴포넌트를 합성해 구성했다. 변경 가능성이 적은 파일 추가 및 삭제 메소드는 커스텀 훅으로 추상화해 관리하고, 이벤트 핸들러 내 로직은 기획 변경 등으로 인해 팝업 노출이나 validation 같은 부수 로직이 추가되거나 수정될 가능성이 높아 상대적으로 자주 바뀔 수 있다고 판단했다. 이렇게 "핵심 로직"과 "부수적인 로직"을 분리해 놓으니 코드가 더 직관적이고, 변경에 유연하며 확장성도 높아졌다.
+전체 코드는 역할에 따라 나눈 컴포넌트를 합성해 구성했다. 변경 가능성이 적은 파일 추가 및 삭제 메소드는 커스텀 훅으로 추상화해 관리하고, 이벤트 핸들러 내 로직은 기획 변경 등으로 인해 팝업 노출이나 validation 같은 부수 로직이 추가되거나 수정될 가능성이 높아 상대적으로 자주 바뀔 수 있다고 판단했다. 이렇게 **핵심 로직**과 **부수적인 로직**을 분리해 놓으니 코드가 더 직관적이고, 변경에 유연하며 확장성도 높아졌다.
 
-여기서 "핵심"과 "비핵심"의 구분은 곧 "변경 가능성이 낮은 것"과 "변경 가능성이 높은 것"으로 볼 수 있으며, 이는 "추상적인 것"과 "구체적인 것"의 차이로도 이해할 수 있다. 따라서 추상적인 부분은 역할별로 나누고, 구체적인 부분은 상위 컴포넌트에서 주입하는 방식으로 구현하면 코드가 변경에 유연하고 확장 가능하게 만들어진다는 생각이 들었다.
+여기서 **핵심**과 **비핵심**의 구분은 곧 **변경 가능성이 낮은 것**과 **변경 가능성이 높은 것**으로 볼 수 있으며, 이는 **추상적인 것**과 **구체적인 것**의 차이로도 이해할 수 있다. 따라서 추상적인 부분은 역할별로 나누고, 구체적인 부분은 상위 컴포넌트에서 주입하는 방식으로 구현하면 코드가 변경에 유연하고 확장 가능하게 만들어진다는 생각이 들었다.
 
 #### # 전체 코드
 
@@ -281,7 +257,7 @@ function MultipleFileUpload() {
       // confirm 팝업 노출, 삭제 확인 하면 아래 메소드 실행.
       deleteFile(file);
     },
-    []
+    [],
   );
 
   const onSubmit = useCallback(() => {
@@ -290,19 +266,12 @@ function MultipleFileUpload() {
 
   return (
     <FileUpload onSubmit={onSubmit}>
-      <FileUpload.Box
-        multiple
-        onChange={onChange}
-        onDrop={onDrop}
-        accept="image/*, .pdf"
-      />
+      <FileUpload.Box multiple onChange={onChange} onDrop={onDrop} accept="image/*, .pdf" />
       {files.length > 0 ? (
         <FileUpload.Preview>
           {files.map((file) => (
             <FileUpload.PreviewItem key={file.name} file={file} w={64} h={64}>
-              <FileUpload.PreviewTrigger
-                as={<DeleteIcon onClick={onDelete(file)} />}
-              />
+              <FileUpload.PreviewTrigger as={<DeleteIcon onClick={onDelete(file)} />} />
             </FileUpload.PreviewItem>
           ))}
         </FileUpload.Preview>
