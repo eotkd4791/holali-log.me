@@ -9,10 +9,8 @@ import getUniqueTags from "@utils/getUniqueTags";
 import { SITE } from "@config";
 
 const posts = await getCollection("blog");
-const lives = await getCollection("essay");
 
 const postTags = getUniqueTags(posts);
-const lifeTags = getUniqueTags(lives);
 ---
 
 <Layout title={`태그 | ${SITE.title}`}>
@@ -20,9 +18,6 @@ const lifeTags = getUniqueTags(lives);
   <Main pageTitle="태그" pageDesc="글 쓰는 데에 사용한 모든 태그.">
     <ul>
       {postTags.map(({ tag }) => <Tag {tag} size="lg" />)}
-    </ul>
-    <ul>
-      {lifeTags.map(({ tag }) => <Tag {tag} size="lg" />)}
     </ul>
   </Main>
   <Footer />
