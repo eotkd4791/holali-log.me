@@ -8,8 +8,8 @@ draft: false
 type: tech
 tags:
   - supabase
-  - posgresql
-  - row-level security
+  - postgresql
+  - rls
 description: RLS에 대해 공부한 내용을 정리하는 내용입니다.
 ---
 
