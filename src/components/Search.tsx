@@ -22,9 +22,7 @@ interface SearchResult {
 export default function SearchBar({ searchList }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputVal, setInputVal] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-    null
-  );
+  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value);
@@ -38,7 +36,7 @@ export default function SearchBar({ searchList }: Props) {
         minMatchCharLength: 2,
         threshold: 0.5,
       }),
-    [searchList]
+    [searchList],
   );
 
   useEffect(() => {
@@ -50,8 +48,7 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        searchStr?.length || 0;
+      inputRef.current!.selectionStart = inputRef.current!.selectionEnd = searchStr?.length || 0;
     }, 50);
   }, []);
 
@@ -65,8 +62,7 @@ export default function SearchBar({ searchList }: Props) {
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search);
       searchParams.set("q", inputVal);
-      const newRelativePathQuery =
-        window.location.pathname + "?" + searchParams.toString();
+      const newRelativePathQuery = window.location.pathname + "?" + searchParams.toString();
       history.replaceState(history.state, "", newRelativePathQuery);
     } else {
       history.replaceState(history.state, "", window.location.pathname);
@@ -87,7 +83,7 @@ export default function SearchBar({ searchList }: Props) {
         border-opacity-40 bg-skin-fill py-3 pl-10
         pr-3 placeholder:italic placeholder:text-opacity-75 
         focus:border-skin-accent focus:outline-none"
-          placeholder="Search for anything..."
+          placeholder="키워드를 입력하세요."
           type="text"
           name="search"
           value={inputVal}
@@ -101,21 +97,14 @@ export default function SearchBar({ searchList }: Props) {
       {inputVal.length > 1 && (
         <div className="mt-8">
           Found {searchResults?.length}
-          {searchResults?.length && searchResults?.length === 1
-            ? " result"
-            : " results"}{" "}
-          for '{inputVal}'
+          {searchResults?.length && searchResults?.length === 1 ? " result" : " results"} for '{inputVal}'
         </div>
       )}
 
       <ul>
         {searchResults &&
           searchResults.map(({ item, refIndex }) => (
-            <Card
-              href={`/posts/${item.slug}`}
-              frontmatter={item.data}
-              key={`${refIndex}-${item.slug}`}
-            />
+            <Card href={`/posts/${item.slug}`} frontmatter={item.data} key={`${refIndex}-${item.slug}`} />
           ))}
       </ul>
     </>

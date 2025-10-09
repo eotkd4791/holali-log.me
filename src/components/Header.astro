@@ -56,11 +56,11 @@ const { activeNav } = Astro.props;
           </svg>
         </button>
         <ul id="menu-items" class="display-none sm:flex">
+          <!-- <li>
+            <a href="/" class={activeNav === "posts" ? "active" : ""}>홈</a>
+          </li> -->
           <li>
-            <a href="/posts" class={activeNav === "posts" ? "active" : ""}> 기술</a>
-          </li>
-          <li>
-            <a href="/tags" class={activeNav === "tags" ? "active" : ""}> 태그</a>
+            <a href="/tags" class={activeNav === "tags" ? "active" : ""}>태그</a>
           </li>
           <!-- <li>
             <a href="/about" class={activeNav === "about" ? "active" : ""}>
