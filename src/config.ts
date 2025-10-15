@@ -30,10 +30,4 @@ export const SOCIALS: SocialObjects = [
     linkTitle: ` ${SITE.author} on Github`,
     active: true,
   },
-  {
-    name: "Mail",
-    href: "mailto:eotkd4791@kakao.com",
-    linkTitle: `Send an email to ${SITE.author}`,
-    active: true,
-  },
 ];
