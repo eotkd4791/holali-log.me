@@ -1,15 +1,14 @@
 ---
 author: 유대상
 pubDatetime: 2025-06-08T15:14:01Z
-title: "initialData와 placeholderData의 차이"
+title: "React Query initialData와 placeholderData의 차이"
 slug: initialData-vs-placeholderData
 featured: false
 draft: false
 type: tech
 tags:
-  - react
   - react-query
-description: initialData와 placeholderData의 차이를 설명하는 블로그 글입니다.
+description: React Query의 initialData와 placeholderData의 차이를 설명하는 블로그 글입니다.
 ---
 
 React Query에서 데이터를 불러올 때, 로딩 시 보여줄 초기 데이터를 설정하고 싶을 때가 있다. 이때 사용할 수 있는 옵션이 `initialData`와 `placeholderData`다. 둘 다 유사해 보이지만, 실제 동작은 전혀 다르다.
