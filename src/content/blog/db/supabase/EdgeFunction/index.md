@@ -12,7 +12,8 @@ tags:
 description: 정적 페이지에 Supabase Edge Function을 이용하여 DB통신을 추가한 과정을 공유합니다
 ---
 
-> 정적 페이지에 Supabase Edge Function을 이용하여 DB 통신을 추가한 과정을 공유합니다
+> 정적 페이지에 Supabase Edge Function을 이용하여 DB 통신을 추가한 과정을 공유합니다.
+> 예시 페이지는 [여기](https://writing-buddy.holali-log.me)에서 확인하실 수 있습니다.
 
 갑자기 떠오른 사이드 프로젝트 아이디어를 검증하기 위한 랜딩페이지를 개발하기로 했다. 해당 페이지에는 제품에 대한 간단한 설명과 제품 출시 알림을 전달받을 이메일을 입력받는 폼을 추가하기로 했다.
 
